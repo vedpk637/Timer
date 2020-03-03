@@ -1,0 +1,29 @@
+<h2><b>Timer</b></h2>
+<hr>
+<br>
+<div class="timer">
+    <p><span >{{mm}}:{{sc}}</span></p>
+</div>
+
+<div class="example-button-row">
+    <button mat-raised-button (click)="onClick('1')" [disabled]="isDisabled"  value="1">01:00</button>
+    <button mat-raised-button (click)="onClick('3')" [disabled]="isDisabled"  color="primary">3</button>
+    <button mat-raised-button (click)="onClick('4')" [disabled]="isDisabled"  color="primary">4</button>
+    <button mat-raised-button (click)="onClick('5')" [disabled]="isDisabled"  color="primary">5</button>
+    <button mat-raised-button (click)="onClick('6')" [disabled]="isDisabled"  color="primary">6</button>
+    <button mat-raised-button (click)="onClick('10')" [disabled]="isDisabled" color="primary">10</button>
+    <!-- <input type="text" placeholder="enter Time" [(ngModel)]="enterValue" (change)= "onChange($event)"> -->
+    <button mat-raised-button (click)="onCustomClick()" *ngIf="isTrue"  color="primary">Custom</button>
+    <div  *ngIf="!isTrue" style="margin-top: 15px;">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Time</mat-label>
+              <input type="time" matInput (change)="onChanges($event)" [(ngModel)]="inputValue">
+            </mat-form-field>
+            <button mat-raised-button (click)="onQuit()" color="primary" style="margin-left: 5px; margin-bottom: 4px;">Quit</button>
+          </form>
+          <button mat-raised-button (click)="onStart()" color="primary">Start</button>
+    </div>
+    
+    
+</div>
